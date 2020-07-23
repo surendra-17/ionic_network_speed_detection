@@ -1,0 +1,26 @@
+{
+  "name": "networkspeeddetection",
+  "version": "0.0.1",
+  "description": "Network speed detection plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surendra-17/ionic_network_speed_detection.git"
+  },
+  "keywords": [
+    "network",
+    "speed",
+    "ionic",
+    "internet",
+    "connectivity"
+  ],
+  "author": "Surendra Sawant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surendra-17/ionic_network_speed_detection/issues"
+  },
+  "homepage": "https://github.com/surendra-17/ionic_network_speed_detection#readme"
+}

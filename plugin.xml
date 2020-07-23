@@ -4,16 +4,16 @@
 		NetworkSpeedDetection
 	</name>
 	<js-module name="NetworkSpeedDetection" src="www/NetworkSpeedDetection.js">
-		<clobbers target="cordova.plugins.NetworkSpeedDetection" />
+		<clobbers target="NetworkSpeedDetection" />
 	</js-module>
 	<platform name="android">
 		<config-file parent="/*" target="res/xml/config.xml">
 			<feature name="NetworkSpeedDetection">
-				<param name="android-package" value="cordova-plugin-networkspeeddetection.NetworkSpeedDetection" />
+				<param name="android-package" value="cordova.plugin.networkspeeddetection.NetworkSpeedDetection" />
 			</feature>
 		</config-file>
 		<config-file parent="/*" target="AndroidManifest.xml" />
-		<source-file src="src/android/NetworkSpeedDetection.java" target-dir="src/cordova-plugin-networkspeeddetection/NetworkSpeedDetection" />
+		<source-file src="src/android/NetworkSpeedDetection.java" target-dir="src/cordova/plugin/networkspeeddetection/NetworkSpeedDetection" />
 	</platform>
 	<platform name="ios">
 		<config-file parent="/*" target="config.xml">

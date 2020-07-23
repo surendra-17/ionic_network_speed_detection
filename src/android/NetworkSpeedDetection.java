@@ -1,4 +1,4 @@
-package cordova-plugin-networkspeeddetection;
+package cordova.plugin.networkspeeddetection;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -6,6 +6,12 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.telephony.TelephonyManager;
+
 
 /**
  * This class echoes a string called from JavaScript.
@@ -18,6 +24,8 @@ public class NetworkSpeedDetection extends CordovaPlugin {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
             return true;
+        }else if(action.equals('getNetworkInfo')){
+            this.getNetworkInfo(args,callbackContext);
         }
         return false;
     }
@@ -27,6 +35,15 @@ public class NetworkSpeedDetection extends CordovaPlugin {
             callbackContext.success(message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
+        }
+    }
+
+    private void getNetworkInfo(String message, CallbackContext callbackContext) {
+        try{
+            ConnectivityManager cm = (ConnectivityManager)this.getSystemService(CONNECTIVITY_SERVICE);
+            callbackContext.success(cm.getNetworkInfo());
+        }catch(Exception e){
+            callbackContext.error('Something went wrong '+e);
         }
     }
 }
